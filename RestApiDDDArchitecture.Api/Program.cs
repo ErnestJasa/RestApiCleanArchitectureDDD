@@ -1,5 +1,5 @@
 using Microsoft.AspNetCore.Mvc.Infrastructure;
-using RestApiDDDArchitecture.Api.Errors;
+using RestApiDDDArchitecture.Api.Common.Errors;
 using RestApiDDDArchitecture.Api.Filters;
 using RestApiDDDArchitecture.Application;
 using RestApiDDDArchitecture.Infrastructure;

@@ -14,4 +14,9 @@
     <ProjectReference Include="..\RestApiDDDArchitecture.Infrastructure\RestApiDDDArchitecture.Infrastructure.csproj" />
   </ItemGroup>
 
+
+  <ItemGroup>
+    <PackageReference Include="oneof" Version="3.0.255" />
+  </ItemGroup>
+
 </Project>
