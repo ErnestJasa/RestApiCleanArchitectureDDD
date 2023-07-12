@@ -1,0 +1,17 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net7.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <UserSecretsId>8c4095c6-5e7e-4bf7-8e4e-c187db0d4805</UserSecretsId>
+  </PropertyGroup>
+
+
+  <ItemGroup>
+    <ProjectReference Include="..\RestApiDDDArchitecture.Contracts\RestApiDDDArchitecture.Contracts.csproj" />
+    <ProjectReference Include="..\RestApiDDDArchitecture.Application\RestApiDDDArchitecture.Application.csproj" />
+    <ProjectReference Include="..\RestApiDDDArchitecture.Infrastructure\RestApiDDDArchitecture.Infrastructure.csproj" />
+  </ItemGroup>
+
+</Project>
