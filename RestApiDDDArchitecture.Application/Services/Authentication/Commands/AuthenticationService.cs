@@ -4,50 +4,22 @@ using OneOf;
 using RestApiDDDArchitecture.Application.Common.Errors;
 using RestApiDDDArchitecture.Application.Common.Interfaces.Authentication;
 using RestApiDDDArchitecture.Application.Common.Interfaces.Persistence;
+using RestApiDDDArchitecture.Application.Services.Authentication.Common;
 using RestApiDDDArchitecture.Domain.Common.Errors;
 using RestApiDDDArchitecture.Domain.Entities;
 
-namespace RestApiDDDArchitecture.Application.Services.Authentication;
+namespace RestApiDDDArchitecture.Application.Services.Authentication.Commands;
 
-public class AuthenticationService : IAuthenticationService
+public class AuthenticationCommandService : IAuthenticationCommandService
 {
 	private readonly IJwtTokenGenerator _jwtTokenGenerator;
 	private readonly IUserRepository _userRepository;
-	public AuthenticationService(IJwtTokenGenerator jwtTokenGenerator, IUserRepository userRepository)
+	public AuthenticationCommandService(IJwtTokenGenerator jwtTokenGenerator, IUserRepository userRepository)
 	{
 		_jwtTokenGenerator = jwtTokenGenerator;
 		_userRepository = userRepository;
 	}
-	public ErrorOr<AuthenticationResult> Login(string email, string password)
-	{
-		// 1. Validate the user exists
-		if (_userRepository.GetUserByEmail(email) is not User user)
-		{
-			//// regular exceptiont throwing
-			// throw new Exception("User with given email does not exist");
-			
-			//// using errorOr
-			return Errors.Authentication.InvalidCredentials;
-		}
-		// 2. Validate the password is correct
-		if (user.Password != password)
-		{
-            //// regular exceptiont throwing
-            //throw new Exception("Invalid password.");
-
-            //// using errorOr
-            return new[] { Errors.Authentication.InvalidCredentials };
-		}
-
-
-		// 3. generate JWT token
-		var token = _jwtTokenGenerator.GenerateToken(user);
-
-		return new AuthenticationResult(
-			user,
-			token
-		);
-	}
+	
 
 	public ErrorOr<AuthenticationResult> Register(string firstName, string lastName, string email, string password)
 	{

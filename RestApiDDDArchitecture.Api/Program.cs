@@ -1,4 +1,5 @@
 using Microsoft.AspNetCore.Mvc.Infrastructure;
+using RestApiDDDArchitecture.Api;
 using RestApiDDDArchitecture.Api.Common.Errors;
 using RestApiDDDArchitecture.Api.Filters;
 using RestApiDDDArchitecture.Application;
@@ -7,13 +8,9 @@ using RestApiDDDArchitecture.Infrastructure;
 var builder = WebApplication.CreateBuilder(args);
 {
 	builder.Services
+		.AddPresentation()
 		.AddApplication()
-		.AddInfrastructure(builder.Configuration);
-		
-	//builder.Services.AddControllers(options => options.Filters.Add<ErrorHandlingFilterAttribute>());	// Error handling attribute
-	builder.Services.AddControllers();
-	
-	builder.Services.AddSingleton<ProblemDetailsFactory, OurOwnProblemDetailsFactory>(); // overriding the problem details with out own implementation
+		.AddInfrastructure(builder.Configuration);		
 }																	
 
 // Add services to the container.

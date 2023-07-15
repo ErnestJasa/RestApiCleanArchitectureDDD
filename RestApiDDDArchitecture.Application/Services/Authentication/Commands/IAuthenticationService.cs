@@ -2,10 +2,11 @@ using ErrorOr;
 using FluentResults;
 using OneOf;
 using RestApiDDDArchitecture.Application.Common.Errors;
+using RestApiDDDArchitecture.Application.Services.Authentication.Common;
 
-namespace RestApiDDDArchitecture.Application.Services.Authentication;
+namespace RestApiDDDArchitecture.Application.Services.Authentication.Commands;
 
-public interface IAuthenticationService
+public interface IAuthenticationCommandService
 {
 	// simple implementation
 	// AuthenticationResult Register(string firstName, string lastName, string email, string password);
@@ -19,9 +20,5 @@ public interface IAuthenticationService
 	// using errorOr package
 	ErrorOr<AuthenticationResult> Register(string firstName, string lastName, string email, string password);
 	
-	// simple implementation 
-	// AuthenticationResult Login(string email, string password);
 	
-	// using errorOr package
-	ErrorOr<AuthenticationResult> Login(string email, string password);
 }

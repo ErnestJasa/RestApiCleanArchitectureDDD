@@ -1,6 +1,6 @@
 using RestApiDDDArchitecture.Domain.Entities;
 
-namespace RestApiDDDArchitecture.Application.Services.Authentication;
+namespace RestApiDDDArchitecture.Application.Services.Authentication.Common;
 
 public record AuthenticationResult
 (
