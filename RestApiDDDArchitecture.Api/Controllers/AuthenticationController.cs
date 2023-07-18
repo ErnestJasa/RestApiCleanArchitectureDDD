@@ -2,6 +2,7 @@ using ErrorOr;
 using FluentResults;
 using MapsterMapper;
 using MediatR;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using OneOf;
 using RestApiDDDArchitecture.Application.Authentication.Commands.Register;
@@ -18,6 +19,7 @@ using RestApiDDDArchitecture.Contracts.Authentication;
 namespace RestApiDDDArchitecture.Api.Controllers;
 
 [Route("auth")]
+[AllowAnonymous]
 public class AuthenticationController : ApiController 
 {
 	private readonly ISender _mediator; // mediator replaces the services below

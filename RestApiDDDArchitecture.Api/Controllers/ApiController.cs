@@ -2,10 +2,12 @@ using ErrorOr;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.ModelBinding;
 using RestApiDDDArchitecture.Api.Common.Http;
+using Microsoft.AspNetCore.Authorization;
 
 namespace RestApiDDDArchitecture.Api.Controllers;
 
 [ApiController]
+[Authorize]
 public class ApiController : ControllerBase
 {
 	protected IActionResult Problem(List<Error> errors)
