@@ -1,6 +1,8 @@
-﻿using RestApiDDDArchitecture.Domain.Common.Models;
+﻿using RestApiDDDArchitecture.Domain.Bill.ValueObjects;
+using RestApiDDDArchitecture.Domain.Common.Models;
 using RestApiDDDArchitecture.Domain.Common.ValueObjects;
 using RestApiDDDArchitecture.Domain.Dinner.ValueObjects;
+using RestApiDDDArchitecture.Domain.Guest.Entities;
 using RestApiDDDArchitecture.Domain.Guest.ValueObjects;
 using RestApiDDDArchitecture.Domain.Host.ValueObjects;
 using RestApiDDDArchitecture.Domain.MenuReview.ValueObjects;
@@ -56,19 +58,18 @@ namespace RestApiDDDArchitecture.Domain.Guest
         }
 
         public static Guest Create(string firstName,
-                      string lastName,
-                      string profilePicture,
-                      UserId userId)
+                                   string lastName,
+                                   string profilePicture,
+                                   UserId userId)
         {
-            return new(
-                GuestId.CreateUnique(),
-                firstName,
-                lastName,
-                profilePicture,
-                AverageRating.CreateNew(),
-                userId,
-                DateTime.UtcNow,
-                DateTime.UtcNow);
+            return new(GuestId.CreateUnique(),
+                       firstName,
+                       lastName,
+                       profilePicture,
+                       AverageRating.CreateNew(),
+                       userId,
+                       DateTime.UtcNow,
+                       DateTime.UtcNow);
         }
     }
 }

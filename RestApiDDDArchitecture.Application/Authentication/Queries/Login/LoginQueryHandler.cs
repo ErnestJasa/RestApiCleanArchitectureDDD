@@ -3,9 +3,8 @@ using MediatR;
 using RestApiDDDArchitecture.Application.Common.Interfaces.Authentication;
 using RestApiDDDArchitecture.Application.Common.Interfaces.Persistence;
 using RestApiDDDArchitecture.Application.Services.Authentication.Common;
-using RestApiDDDArchitecture.Domain.Entities;
 using RestApiDDDArchitecture.Domain.Common.Errors;
-
+using RestApiDDDArchitecture.Domain.User;
 
 namespace RestApiDDDArchitecture.Application.Authentication.Queries.Login;
 

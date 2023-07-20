@@ -6,7 +6,7 @@ using RestApiDDDArchitecture.Application.Common.Interfaces.Authentication;
 using RestApiDDDArchitecture.Application.Common.Interfaces.Persistence;
 using RestApiDDDArchitecture.Application.Services.Authentication.Common;
 using RestApiDDDArchitecture.Domain.Common.Errors;
-using RestApiDDDArchitecture.Domain.Entities;
+using RestApiDDDArchitecture.Domain.User;
 
 namespace RestApiDDDArchitecture.Application.Services.Authentication.Commands;
 
@@ -56,13 +56,8 @@ public class AuthenticationCommandService : IAuthenticationCommandService
 		}
 
 		// 2. Create user(generate unique ID) & persist to DB
-		var user = new User
-		{
-			FirstName = firstName,
-			LastName = lastName,
-			Email = email,
-			Password = password
-		};
+		var user = User.Create(firstName, lastName, email, password);
+		
 		_userRepository.Add(user);
 		// 3. Create JWT token
 

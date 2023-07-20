@@ -5,7 +5,7 @@ using Microsoft.Extensions.Options;
 using Microsoft.IdentityModel.Tokens;
 using RestApiDDDArchitecture.Application.Common.Interfaces.Authentication;
 using RestApiDDDArchitecture.Application.Common.Interfaces.Services;
-using RestApiDDDArchitecture.Domain.Entities;
+using RestApiDDDArchitecture.Domain.User;
 
 namespace RestApiDDDArchitecture.Infrastructure.Authentication;
 
@@ -26,7 +26,7 @@ public class JwtTokenGenerator : IJwtTokenGenerator
 				SecurityAlgorithms.HmacSha256);
 
 		var claims = new[]{
-			new Claim(JwtRegisteredClaimNames.Sub, user.Id.ToString()),
+			new Claim(JwtRegisteredClaimNames.Sub, user.Id.ToString()!),
 			new Claim(JwtRegisteredClaimNames.GivenName, user.FirstName),
 			new Claim(JwtRegisteredClaimNames.FamilyName, user.LastName),
 			new Claim(JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString()),

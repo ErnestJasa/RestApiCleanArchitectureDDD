@@ -1,9 +1,9 @@
 using ErrorOr;
 using RestApiDDDArchitecture.Application.Common.Interfaces.Authentication;
 using RestApiDDDArchitecture.Application.Common.Interfaces.Persistence;
-using RestApiDDDArchitecture.Domain.Entities;
 using RestApiDDDArchitecture.Domain.Common.Errors;
 using RestApiDDDArchitecture.Application.Services.Authentication.Common;
+using RestApiDDDArchitecture.Domain.User;
 
 namespace RestApiDDDArchitecture.Application.Services.Authentication.Queries;
 

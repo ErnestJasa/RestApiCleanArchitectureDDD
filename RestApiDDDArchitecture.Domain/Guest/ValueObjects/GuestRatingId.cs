@@ -1,20 +1,19 @@
 ﻿using RestApiDDDArchitecture.Domain.Common.Models;
 
-namespace RestApiDDDArchitecture.Domain.User.ValueObjects
+namespace RestApiDDDArchitecture.Domain.Guest.ValueObjects
 {
-    public sealed class UserId : ValueObject
+    public sealed class GuestRatingId : ValueObject
     {
         public Guid Value { get; }
 
-        private UserId(Guid value)
+        private GuestRatingId(Guid value)
         {
             Value = value;
         }
-        public static UserId CreateUnique()
+        public static GuestRatingId CreateUnique()
         {
             return new(Guid.NewGuid());
         }
-       
         public override IEnumerable<object> GetEqualityComponents()
         {
             yield return Value;

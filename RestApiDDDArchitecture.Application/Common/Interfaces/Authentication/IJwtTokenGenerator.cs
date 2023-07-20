@@ -1,4 +1,4 @@
-using RestApiDDDArchitecture.Domain.Entities;
+using RestApiDDDArchitecture.Domain.User;
 
 namespace RestApiDDDArchitecture.Application.Common.Interfaces.Authentication;
 
