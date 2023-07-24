@@ -1,5 +1,5 @@
 using RestApiDDDArchitecture.Application.Common.Interfaces.Persistence;
-using RestApiDDDArchitecture.Domain.User;
+using RestApiDDDArchitecture.Domain.UserAggregate;
 
 namespace RestApiDDDArchitecture.Infrastructure.Persistence;
 

@@ -1,4 +1,4 @@
-using RestApiDDDArchitecture.Domain.User;
+using RestApiDDDArchitecture.Domain.UserAggregate;
 
 namespace RestApiDDDArchitecture.Application.Services.Authentication.Common;
 

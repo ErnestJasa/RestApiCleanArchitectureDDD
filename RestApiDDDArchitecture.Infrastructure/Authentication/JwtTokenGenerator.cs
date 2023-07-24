@@ -5,7 +5,7 @@ using Microsoft.Extensions.Options;
 using Microsoft.IdentityModel.Tokens;
 using RestApiDDDArchitecture.Application.Common.Interfaces.Authentication;
 using RestApiDDDArchitecture.Application.Common.Interfaces.Services;
-using RestApiDDDArchitecture.Domain.User;
+using RestApiDDDArchitecture.Domain.UserAggregate;
 
 namespace RestApiDDDArchitecture.Infrastructure.Authentication;
 

@@ -1,3 +1,4 @@
 {
-    "dotnet.defaultSolution": "RestApiDDDArchitecture.sln"
+    "dotnet.defaultSolution": "RestApiDDDArchitecture.sln",
+    "workbench.colorTheme": "One Dark Pro Darker"
 }
