@@ -5,11 +5,11 @@ namespace RestApiDDDArchitecture.Domain.BillAggregate.ValueObjects
 {
     public sealed class BillId : ValueObject
     {
-        public Guid Value { get; }
+        public string Value { get; }
 
         private BillId(Guid value)
         {
-            Value = value;
+            Value = value.ToString();
         }
         public static BillId CreateUnique()
         {

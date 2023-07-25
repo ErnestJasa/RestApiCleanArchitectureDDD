@@ -1,7 +1,7 @@
 using RestApiDDDArchitecture.Application.Common.Interfaces.Persistence;
 using RestApiDDDArchitecture.Domain.UserAggregate;
 
-namespace RestApiDDDArchitecture.Infrastructure.Persistence;
+namespace RestApiDDDArchitecture.Infrastructure.Persistence.Repositories;
 
 public class UserRepository : IUserRepository
 {

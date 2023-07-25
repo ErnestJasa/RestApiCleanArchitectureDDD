@@ -1,5 +1,6 @@
 using System.Text;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Options;
@@ -9,6 +10,7 @@ using RestApiDDDArchitecture.Application.Common.Interfaces.Persistence;
 using RestApiDDDArchitecture.Application.Common.Interfaces.Services;
 using RestApiDDDArchitecture.Infrastructure.Authentication;
 using RestApiDDDArchitecture.Infrastructure.Persistence;
+using RestApiDDDArchitecture.Infrastructure.Persistence.Repositories;
 using RestApiDDDArchitecture.Infrastructure.Services;
 
 
@@ -21,7 +23,7 @@ public static class DependencyInjection
 		ConfigurationManager configuration)
 	{
 		services.AddAuth(configuration)
-		      	.AddPersistance();
+			  	.AddPersistance();
 		
 		services.AddSingleton<IDateTimeProvider, DateTimeProvider>();
 		return services;
@@ -31,6 +33,8 @@ public static class DependencyInjection
 	public static IServiceCollection AddPersistance(
 		this IServiceCollection services)
 	{
+		services.AddDbContext<AppDbContext>(options => 
+			options.UseSqlServer("Server=(localdb)\\MSSQLLocalDB;Database=RestApiCleanArchitecture;TrustServerCertificate=true"));
 		services.AddScoped<IUserRepository, UserRepository>();
 		services.AddScoped<IMenuRepository, MenuRepository>();
 		

@@ -4,11 +4,11 @@ namespace RestApiDDDArchitecture.Domain.GuestAggregate.ValueObjects
 {
     public sealed class GuestRatingId : ValueObject
     {
-        public Guid Value { get; }
+        public string Value { get; }
 
         private GuestRatingId(Guid value)
         {
-            Value = value;
+            Value = value.ToString();
         }
         public static GuestRatingId CreateUnique()
         {
