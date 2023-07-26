@@ -1,18 +1,20 @@
 namespace RestApiDDDArchitecture.Domain.Common.Models;
 
-public abstract class AggregateRoot<TId> : Entity<TId>
-    where TId : notnull
+public abstract class AggregateRoot<TId, TIdType> : Entity<TId>
+	where TId : AggregateRootId<TIdType>
 {
-    protected AggregateRoot(TId id) : base(id)
-    {
-    }
-    public TId GetId()
-    {
-        return Id;
-    }
+	public new AggregateRootId<TIdType> Id { get; protected set; }
+	protected AggregateRoot(TId id)
+	{
+		Id = id;
+	}
+	public TIdType GetId()
+	{
+		return Id.Value;
+	}
 #pragma warning disable CS8618
-    protected AggregateRoot()
-    {
-    }
+	protected AggregateRoot()
+	{
+	}
 #pragma warning restore CS8618
 }

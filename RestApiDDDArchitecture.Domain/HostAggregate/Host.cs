@@ -7,7 +7,7 @@ using RestApiDDDArchitecture.Domain.UserAggregate.ValueObjects;
 
 namespace RestApiDDDArchitecture.Domain.HostAggregate;
 
-public sealed class Host : AggregateRoot<HostId>
+public sealed class Host : AggregateRoot<HostId, string>
 {
 	private readonly List<MenuId> _menuIds = new();
 	private readonly List<DinnerId> _dinnerIds = new();

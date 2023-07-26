@@ -7,7 +7,7 @@ using RestApiDDDArchitecture.Domain.MenuReviewAggregate.ValueObjects;
 
 namespace RestApiDDDArchitecture.Domain.MenuReviewAggregate;
 
-public sealed class MenuReview : AggregateRoot<MenuReviewId>
+public sealed class MenuReview : AggregateRoot<MenuReviewId, Guid>
 {
     public int Rating { get; }
     public string Comment { get; }

@@ -10,6 +10,7 @@ using RestApiDDDArchitecture.Application.Common.Interfaces.Persistence;
 using RestApiDDDArchitecture.Application.Common.Interfaces.Services;
 using RestApiDDDArchitecture.Infrastructure.Authentication;
 using RestApiDDDArchitecture.Infrastructure.Persistence;
+using RestApiDDDArchitecture.Infrastructure.Persistence.Interceptors;
 using RestApiDDDArchitecture.Infrastructure.Persistence.Repositories;
 using RestApiDDDArchitecture.Infrastructure.Services;
 
@@ -35,6 +36,8 @@ public static class DependencyInjection
 	{
 		services.AddDbContext<AppDbContext>(options => 
 			options.UseSqlServer("Server=(localdb)\\MSSQLLocalDB;Database=RestApiCleanArchitecture;TrustServerCertificate=true"));
+			
+		services.AddScoped<PublishDomainEventsInterceptor>();
 		services.AddScoped<IUserRepository, UserRepository>();
 		services.AddScoped<IMenuRepository, MenuRepository>();
 		

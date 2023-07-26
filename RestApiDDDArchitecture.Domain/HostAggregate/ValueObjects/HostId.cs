@@ -3,9 +3,9 @@ using RestApiDDDArchitecture.Domain.UserAggregate.ValueObjects;
 
 namespace RestApiDDDArchitecture.Domain.HostAggregate.ValueObjects;
 
-public sealed class HostId : ValueObject
+public sealed class HostId : AggregateRootId<string>
 {
-	public string Value { get; }
+	public override string Value { get; protected set;}
 
 	
 	private HostId(string value)

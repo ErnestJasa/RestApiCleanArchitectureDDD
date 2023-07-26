@@ -16,7 +16,7 @@ public class AuthenticaionMappingConfig : IRegister
 		
 		config.NewConfig<AuthenticationResult, AuthenticationResponse>()
 			.Map(dest => dest, src => src.User)
-			.Map(dest => dest.Id, src => src.User.Id.Value);
+			.Map(dest => dest.Id, src => src.User.GetId());
 		
 	}
 }

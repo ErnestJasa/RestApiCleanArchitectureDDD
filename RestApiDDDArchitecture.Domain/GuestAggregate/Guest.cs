@@ -15,7 +15,7 @@ using System.Threading.Tasks;
 
 namespace RestApiDDDArchitecture.Domain.GuestAggregate
 {
-    public sealed class Guest : AggregateRoot<GuestId>
+    public sealed class Guest : AggregateRoot<GuestId, Guid>
     {
         private readonly List<DinnerId> _upcomingDinnerIds = new();
         private readonly List<DinnerId> _pastDinnerIds = new();

@@ -3,13 +3,13 @@ using RestApiDDDArchitecture.Domain.DinnerAggregate.ValueObjects;
 
 namespace RestApiDDDArchitecture.Domain.BillAggregate.ValueObjects
 {
-    public sealed class BillId : ValueObject
+    public sealed class BillId : AggregateRootId<Guid>
     {
-        public string Value { get; }
+        public override Guid Value { get; protected set; }
 
         private BillId(Guid value)
         {
-            Value = value.ToString();
+            Value = value;
         }
         public static BillId CreateUnique()
         {
